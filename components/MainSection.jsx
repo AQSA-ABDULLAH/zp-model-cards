@@ -3,12 +3,11 @@ import Card from './card/Card'
 
 function MainSection() {
   return (
-    <div className='flex'>
-      {/* <Card />
+    <div className='flex justify-between'>
       <Card />
-      <Card /> */}
       <Card />
-      hhuhu
+      <Card />
+      <Card />
     </div>
   )
 }

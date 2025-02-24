@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function BottomSection() {
 
   return (
-    <section className="flex flex-col h-[50%] w-full max-w-sm mx-auto border border-gray-200 p-4 rounded-lg bg-gray-900 text-white shadow-lg">
+    <section className="flex flex-col w-full max-w-sm mx-auto p-4 rounded-b-lg bg-gray-900 text-white">
       {/* Countdown Timer */}
       <div className="uppercase flex items-center justify-center gap-4 w-max mx-auto relative mt-1">
         {["days", "hours", "minutes", "seconds"].map((unit, index) => (

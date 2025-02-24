@@ -9,12 +9,24 @@ import "swiper/css/pagination";
 
 const images = [
   "/assest/2313.jpg",
-  "/assest/22335.jpg"
+  "/assest/22335.jpg",
+  "/assest/24342.jpg",
+  "/assest/63421.jpg",
+  "/assest/131123.jpg",
+  "/assest/424221.jpg",
+  "/assest/534521.jpg",
+  "/assest/535421.jpg",
+  "/assest/5345211.jpg",
+  "/assest/7629812.jpg",
+  "/assest/ZP172561.png",
+  "/assest/ZP172594.jpg",
+  "/assest/ZP172597.jpg",
+  "/assest/ZP1725641.png"
 ];
 
 export default function ImageCarousel() {
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={10}
@@ -30,7 +42,7 @@ export default function ImageCarousel() {
               src={src}
               alt={`Slide ${index + 1}`}
               fill
-              className="object-cover rounded-lg"
+              className="object-cover rounded-t-lg"
               priority={index === 0}
             />
           </SwiperSlide>

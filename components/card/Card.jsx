@@ -4,7 +4,7 @@ import BottomSection from './BottomSection'
 
 function Card() {
   return (
-    <div>
+    <div className='w-[300px]'>
       <ImageCarousel />
       <BottomSection />
     </div>
