@@ -56,7 +56,7 @@ function MainSection() {
           </div>
 
           {/* Cards */}
-          <div className="flex px-[60px] justify-between bg-[black] dark:bg-[white]">
+          <div className="flex p-[60px] justify-between bg-[black] dark:bg-[white]">
             {flagImages.map((flag, index) => (
               <Card key={index} flagImage={flag} logoImage={logoImages[index]} />
             ))}
