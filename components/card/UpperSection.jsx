@@ -95,24 +95,31 @@ const UpperSection = ({ flagImage }) => {
         </div>
 
         {/* Navigation Buttons (Hidden by default, visible on hover) */}
-        <div className="absolute top-1/2 left-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="rounded-full text-white" onClick={prevImage}>
-            <img
-              src="/assest/Path2.png"
-              alt="previous-button"
-              className="h-[16px] 3xl:h-[18px]"
-            />
-          </button>
-        </div>
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button className="rounded-full text-white" onClick={nextImage}>
-            <img
-              src="/assest/Path1.png"
-              alt="next-button"
-              className="h-[16px] 3xl:h-[18px]"
-            />
-          </button>
-        </div>
+        {/* Previous Button - Hide if first image */}
+        {currentImageIndex > 0 && (
+          <div className="absolute top-1/2 left-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button className="rounded-full text-white" onClick={prevImage}>
+              <img
+                src="/assest/Path2.png"
+                alt="previous-button"
+                className="h-[16px] 3xl:h-[18px]"
+              />
+            </button>
+          </div>
+        )}
+
+        {/* Next Button - Hide if last image */}
+        {currentImageIndex < images.length - 1 && (
+          <div className="absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <button className="rounded-full text-white" onClick={nextImage}>
+              <img
+                src="/assest/Path1.png"
+                alt="next-button"
+                className="h-[16px] 3xl:h-[18px]"
+              />
+            </button>
+          </div>
+        )}
 
         {/* Share And Like */}
         <div className="absolute bottom-2 3xl:bottom-3 right-3 3xl:right-5">

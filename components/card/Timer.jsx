@@ -39,8 +39,8 @@ function Timer() {
 
   return (
    
-      <div className="uppercase flex items-center justify-center gap-4 w-max mx-auto relative mt-[4px] font-sans">
-        {["day(s)", "hour(s)", "minute(s)", "seconds"].map((unit, index) => {
+      <div className="uppercase flex items-center justify-center gap-4 w-max mx-auto relative mt-[4px] font-style">
+        {["day(s)", "hour(s)", "minute(s)", "second(s)"].map((unit, index) => {
           const values = [timeLeft.days, timeLeft.hours, timeLeft.minutes, timeLeft.seconds];
           return (
             <div key={index} className="flex flex-col gap-1 items-center relative">

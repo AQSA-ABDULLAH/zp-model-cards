@@ -22,9 +22,10 @@ export default {
         "4xl": "2500px", // 2560
       },
       fontFamily: {
-        lato: ["Lato", "sans-serif"],
+        style: ["Lato", "sans-serif"],
       },
     },
   },
   plugins: [],
 };
+
