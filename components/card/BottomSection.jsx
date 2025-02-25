@@ -1,10 +1,9 @@
 "use client";
-
 import Timer from "./Timer";
 
-export default function BottomSection({logoImage}) {
+export default function BottomSection({ logoImage }) {
   return (
-    <section className="flex flex-col w-full bg-[#000] text-white">
+    <section className="flex flex-col w-full bg-white text-black dark:bg-black dark:text-white transition">
       {/* Countdown Timer */}
       <Timer />
 
@@ -22,9 +21,9 @@ export default function BottomSection({logoImage}) {
 
       {/* Entry Button */}
       <div className="w-[75%] mx-auto flex flex-col gap-2.5 3xl:gap-4">
-        <div className="h-[1px] 3xl:h-[2px] bg-current"></div>
+        <div className="h-[1px] 3xl:h-[2px] bg-black dark:bg-white"></div>
 
-        <button className="text-[10.7px] 3xl:text-[14px] border border-white py-[8px] flex justify-evenly transition-all duration-300 hover:bg-white hover:text-black tracking-[1.2px]">
+        <button className="text-[10.7px] 3xl:text-[14px] border border-black dark:border-white py-[8px] flex justify-evenly transition-all duration-300 bg-white dark:bg-black text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black tracking-[1.2px]">
           <p dir="ltr">
             <span dir="ltr">£</span>25.00 GBP
           </p>
@@ -33,10 +32,8 @@ export default function BottomSection({logoImage}) {
 
         {/* Progress Bar */}
         <div>
-          <div className="h-[1px] 3xl:h-[2px] relative bg-white/25">
-            <div
-              className="h-[1px] 3xl:h-[2px] absolute top-0 left-0 bg-current"
-            ></div>
+          <div className="h-[1px] 3xl:h-[2px] relative bg-black/25 dark:bg-white/25">
+            <div className="h-[1px] 3xl:h-[2px] absolute top-0 left-0 bg-black dark:bg-white"></div>
           </div>
           <p className="text-[7px] 3xl:text-[9px] mt-1.5">0%</p>
         </div>
