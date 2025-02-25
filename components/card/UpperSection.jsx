@@ -10,7 +10,6 @@ const images = [
   "/assest/63421.jpg",
   "/assest/131123.jpg",
   "/assest/424221.jpg",
-  "/assest/534521.jpg",
   "/assest/535421.jpg",
 ];
 
