@@ -1,21 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Timer from "./Timer";
 
 export default function BottomSection() {
 
   return (
-    <section className="flex flex-col w-full max-w-sm mx-auto p-4 rounded-b-lg bg-gray-900 text-white">
+    <section className="flex flex-col w-full h-[50%] bg-[#000] text-white">
       {/* Countdown Timer */}
-      <div className="uppercase flex items-center justify-center gap-4 w-max mx-auto relative mt-1">
-        {["days", "hours", "minutes", "seconds"].map((unit, index) => (
-          <div key={index} className="flex flex-col gap-1 items-center relative">
-            <span className="text-[36px] tracking-[4px] leading-[1]">kx</span>
-            <span className="text-[7px] tracking-[1px]">{unit}</span>
-            {index < 3 && <div className="w-[1px] h-[85%] bg-current absolute bottom-0.5 -right-1.5"></div>}
-          </div>
-        ))}
-      </div>
+      <Timer />
 
       {/* Location */}
       <div className="text-[8px] flex justify-center items-center gap-2 mt-2.5">

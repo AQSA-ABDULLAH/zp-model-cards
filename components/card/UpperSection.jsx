@@ -1,32 +1,3 @@
-// import React from "react";
-// import Image from "next/image";
-// import ImageCarousel from "./ImageCarousel";
-
-// function UpperSection() {
-//   return (
-//     <div className="relative">
-//       <ImageCarousel />
-//       <div className="absolute flex justify-between items-center w-full top-3 px-3 z-20">
-//         {/* Left Logo */}
-//         <img
-//           src="/assest/Logo/ZigPro.svg"
-//           alt="ZigPro Logo"
-//           className="h-[16px] 3xl:h-[25px] opacity-50"
-//         />
-
-//         {/* Right Flag */}
-//         <img
-//           src="/assest/Logo/ZigPro.svg"
-//           alt="Flag"
-//           className="h-[16px] 3xl:h-[25px] opacity-50"
-//         />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default UpperSection;
-
 "use client";
 
 import dynamic from "next/dynamic";
@@ -59,11 +30,11 @@ const UpperSection = () => {
   };
 
   return (
-    <div className="text-white bg-white w-full max-w-[350px] md:max-w-[450px] h-[211.5px] 3xl:h-[275px]">
+    <div className="text-white w-full h-[275px]">
       <div className="relative rounded-t-2xl overflow-hidden">
         {/* Background Image Carousel */}
         <div
-          className="h-[211.5px] 3xl:h-[275px] bg-cover bg-center relative"
+          className="h-[275px] bg-cover bg-center relative"
           style={{
             backgroundImage: `url(${images[currentImageIndex]})`,
           }}
@@ -98,12 +69,7 @@ const UpperSection = () => {
         </div>
 
         {/* Share And Like */}
-        <div className="absolute top-24 md:top-28 right-7 flex items-center space-x-4">
-          <img
-            src="/assets/Path 7830.png"
-            alt="share-icon"
-            className="w-5 h-5"
-          />
+        <div className="absolute bottom-7 right-7">
           {isLiked ? (
             <IoMdHeart
               className="cursor-pointer text-red-500 w-5 h-5 md:w-6 md:h-6"
@@ -117,10 +83,8 @@ const UpperSection = () => {
           )}
         </div>
 
-        {/* Circular Progress Bar and Price */}
-
           {/* Slide Indicators */}
-          <div className="absolute bottom-4 flex ">
+          <div className="absolute bottom-4 flex w-full justify-center ">
             {images.map((_, index) => (
               <span
                 key={index}

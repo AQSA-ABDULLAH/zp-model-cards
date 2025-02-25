@@ -4,7 +4,7 @@ import UpperSection from './UpperSection'
 
 function Card() {
   return (
-    <div className='w-[300px]'>
+    <div className='w-[400px] h-[550px]'>
       <UpperSection />
       <BottomSection />
     </div>
