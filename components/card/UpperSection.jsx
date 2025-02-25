@@ -1,7 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { IoMdHeart } from "react-icons/io";
 
@@ -18,6 +17,7 @@ const images = [
 const UpperSection = ({ flagImage }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
+    const [progress, setProgress] = useState(0);
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -28,6 +28,36 @@ const UpperSection = ({ flagImage }) => {
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+
+    useEffect(() => {
+    let progressInterval;
+    let imageTimeout;
+
+    const startLoading = () => {
+      setProgress(0);
+      progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(progressInterval);
+            return 100;
+          }
+          return prev + 2; // Increase progress
+        });
+      }, 100);
+
+      // Move to the next image when loading completes
+      imageTimeout = setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 5000); // Change image after 5 seconds
+    };
+
+    startLoading();
+
+        return () => {
+      clearInterval(progressInterval);
+      clearTimeout(imageTimeout);
+    };
+  }, [currentImageIndex]);
 
   return (
     <div className="text-white w-full h-[211.5px] 3xl:h-[275px]">
@@ -56,12 +86,20 @@ const UpperSection = ({ flagImage }) => {
         {/* Navigation Buttons (Hidden by default, visible on hover) */}
         <div className="absolute top-1/2 left-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={prevImage}>
-            <img src="/assest/Path2.png" alt="previous-button" className="h-[16px] 3xl:h-[18px]" />
+            <img
+              src="/assest/Path2.png"
+              alt="previous-button"
+              className="h-[16px] 3xl:h-[18px]"
+            />
           </button>
         </div>
         <div className="absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={nextImage}>
-            <img src="/assest/Path1.png" alt="next-button" className="h-[16px] 3xl:h-[18px]"  />
+            <img
+              src="/assest/Path1.png"
+              alt="next-button"
+              className="h-[16px] 3xl:h-[18px]"
+            />
           </button>
         </div>
 
@@ -80,16 +118,20 @@ const UpperSection = ({ flagImage }) => {
           )}
         </div>
 
-        {/* Slide Indicators */}
+        {/* Slide Indicators with Loading Effect */}
         <div className="absolute bottom-4 flex w-full justify-center">
           {images.map((_, index) => (
-            <span
+            <div
               key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`cursor-pointer mx-1 h-0.5 w-5 md:w-3 ${
-                index === currentImageIndex ? "bg-white" : "bg-gray-400"
-              }`}
-            ></span>
+              className="relative mx-1 w-5 md:w-[14px] h-[1.5px] bg-gray-400 overflow-hidden rounded-full"
+            >
+              {index === currentImageIndex && (
+                <div
+                  className="h-full bg-white transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              )}
+            </div>
           ))}
         </div>
       </div>
