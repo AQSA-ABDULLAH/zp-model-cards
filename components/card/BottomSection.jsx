@@ -2,7 +2,7 @@
 
 import Timer from "./Timer";
 
-export default function BottomSection() {
+export default function BottomSection({logoImage}) {
   return (
     <section className="flex flex-col w-full bg-[#000] text-white">
       {/* Countdown Timer */}
@@ -46,7 +46,7 @@ export default function BottomSection() {
       <footer className="px-[12px] 3xl:px-[20px] mt-auto pb-[12px] 3xl:pb-[20px] flex justify-between items-end">
         <p className="text-[7px] 3xl:text-[9px] tracking-[1px]">#ZM78612345622</p>
         <img
-          src="https://zimopro.com/assets/temp/agents_logos/Savills.svg"
+          src={logoImage}
           alt="Savills Logo"
           className="h-[18px] 3xl:h-[24px]"
         />
