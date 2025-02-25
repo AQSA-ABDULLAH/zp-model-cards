@@ -117,13 +117,17 @@ const UpperSection = ({ flagImage }) => {
         {/* Share And Like */}
         <div className="absolute bottom-2 3xl:bottom-3 right-3 3xl:right-5">
           {isLiked ? (
-            <IoMdHeart
-              className="cursor-pointer text-red-500 md:w-[19px] 3xl:w-[25px]"
+            <img
+              src="/assest/Logo/Heart Favourite Red (Model).svg"
+              alt="red-hert"
+              className="cursor-pointer md:w-[19px] 3xl:w-[25px]"
               onClick={() => setIsLiked(false)}
             />
           ) : (
-            <FaRegHeart
-              className="cursor-pointer text-white md:w-[19px] 3xl:w-[25px] opacity-40"
+            <img
+              src="/assest/Logo/Heart Standard (Model).svg"
+              alt="red-hert"
+              className="cursor-pointer md:w-[19px] 3xl:w-[25px]"
               onClick={() => setIsLiked(true)}
             />
           )}
@@ -134,7 +138,7 @@ const UpperSection = ({ flagImage }) => {
           {images.map((_, index) => (
             <div
               key={index}
-              className="relative mx-1 w-5 md:w-[14px] h-[1.5px] bg-gray-400 overflow-hidden rounded-full"
+              className="relative mx-1 w-[16px] h-[1.5px] bg-gray-400 overflow-hidden rounded-full"
             >
               {index === currentImageIndex && (
                 <div

@@ -8,14 +8,14 @@ export default function BottomSection({ logoImage }) {
       <Timer />
 
       {/* Location */}
-      <div className="text-[6px] 3xl:text-[8px] flex justify-center items-center gap-2 mt-[16px] tracking-[1px]">
+      <div className="text-[6px] 3xl:text-[8px] flex justify-center items-center gap-2 mt-[16px] tracking-[1px] uppercase">
         <p>London</p>
         <p>SW1A</p>
         <p>United Kingdom</p>
       </div>
 
       {/* Price */}
-      <p className="text-[10.7px] 3xl:text-[14px] text-center my-[10px] 3xl:my-[16px] tracking-[1px]">
+      <p className="text-[10.7px] 3xl:text-[14px] text-center my-[10px] 3xl:my-[16px] tracking-[0.6px]">
         <span dir="ltr">£</span>1,627,271 GBP
       </p>
 

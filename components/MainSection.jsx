@@ -7,14 +7,14 @@ const flagImages = [
   "/assest/Logo/Group 6394.png",
   "/assest/Logo/SPAIN.png",
   "/assest/Logo/UNITED ARAB EMIRATES.png",
-  "/assest/Logo/UNITED STATES.png",
+  // "/assest/Logo/UNITED STATES.png",
 ];
 
 const logoImages = [
   "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
   "/assest/Logo/g12.png",
   "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
-  "/assest/Logo/g12.png",
+  // "/assest/Logo/g12.png",
 ];
 
 function MainSection() {
@@ -56,7 +56,7 @@ function MainSection() {
           </div>
 
           {/* Cards */}
-          <div className="grid grid-cols-3 3xl:grid-cols-4 gap-10 p-12 justify-between bg-[black] dark:bg-[white]">
+          <div className="flex px-[60px] justify-between bg-[black] dark:bg-[white]">
             {flagImages.map((flag, index) => (
               <Card key={index} flagImage={flag} logoImage={logoImages[index]} />
             ))}
