@@ -1,11 +1,11 @@
 import React from 'react'
-import ImageCarousel from './ImageCarousel'
 import BottomSection from './BottomSection'
+import UpperSection from './UpperSection'
 
 function Card() {
   return (
     <div className='w-[300px]'>
-      <ImageCarousel />
+      <UpperSection />
       <BottomSection />
     </div>
   )
