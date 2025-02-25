@@ -16,7 +16,7 @@ const images = [
 const UpperSection = ({ flagImage }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
-    const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -28,7 +28,7 @@ const UpperSection = ({ flagImage }) => {
     );
   };
 
-    useEffect(() => {
+  useEffect(() => {
     let progressInterval;
     let imageTimeout;
 
@@ -52,7 +52,7 @@ const UpperSection = ({ flagImage }) => {
 
     startLoading();
 
-        return () => {
+    return () => {
       clearInterval(progressInterval);
       clearTimeout(imageTimeout);
     };
@@ -61,13 +61,25 @@ const UpperSection = ({ flagImage }) => {
   return (
     <div className="text-white w-full h-[211.5px] 3xl:h-[275px]">
       <div className="relative overflow-hidden group">
-        {/* Background Image Carousel */}
-        <div
-          className="h-[211.5px] 3xl:h-[275px] bg-cover bg-center relative"
-          style={{
-            backgroundImage: `url(${images[currentImageIndex]})`,
-          }}
-        ></div>
+        <div className="relative overflow-hidden">
+          {/* Sliding Container */}
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translate3d(-${currentImageIndex * 100}%, 0, 0)`,
+            }}
+          >
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="w-full h-[211.5px] 3xl:h-[275px] bg-cover bg-center shrink-0"
+                style={{
+                  backgroundImage: `url(${image})`,
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
 
         <div className="absolute top-3 3xl:top-5 left-3 3xl:left-5">
           {/* Left Logo */}
