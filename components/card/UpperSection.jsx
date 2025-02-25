@@ -30,11 +30,11 @@ const UpperSection = ({ flagImage }) => {
   };
 
   return (
-    <div className="text-white w-full h-[275px]">
+    <div className="text-white w-full h-[211.5px] 3xl:h-[275px]">
       <div className="relative overflow-hidden group">
         {/* Background Image Carousel */}
         <div
-          className="h-[275px] bg-cover bg-center relative"
+          className="h-[211.5px] 3xl:h-[275px] bg-cover bg-center relative"
           style={{
             backgroundImage: `url(${images[currentImageIndex]})`,
           }}
@@ -56,12 +56,12 @@ const UpperSection = ({ flagImage }) => {
         {/* Navigation Buttons (Hidden by default, visible on hover) */}
         <div className="absolute top-1/2 left-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={prevImage}>
-            <img src="/assest/Path2.png" alt="previous-button" />
+            <img src="/assest/Path2.png" alt="previous-button" className="h-[16px] 3xl:h-[18px]" />
           </button>
         </div>
         <div className="absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={nextImage}>
-            <img src="/assest/Path1.png" alt="next-button" />
+            <img src="/assest/Path1.png" alt="next-button" className="h-[16px] 3xl:h-[18px]"  />
           </button>
         </div>
 
@@ -87,7 +87,7 @@ const UpperSection = ({ flagImage }) => {
               key={index}
               onClick={() => setCurrentImageIndex(index)}
               className={`cursor-pointer mx-1 h-0.5 w-5 md:w-3 ${
-                index === currentImageIndex ? "bg-gold" : "bg-gray-400"
+                index === currentImageIndex ? "bg-white" : "bg-gray-400"
               }`}
             ></span>
           ))}

@@ -10,7 +10,7 @@ const flagImages = [
 
 function MainSection() {
   return (
-    <div className="grid grid-cols-3 3xl:grid-cols-4 gap-10 m-10">
+    <div className="grid grid-cols-3 3xl:grid-cols-4 gap-10 m-12 justify-between font-lato">
       {flagImages.map((flag, index) => (
         <Card key={index} flagImage={flag} />
       ))}
