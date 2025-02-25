@@ -15,7 +15,7 @@ const images = [
   "/assest/535421.jpg",
 ];
 
-const UpperSection = () => {
+const UpperSection = ({ flagImage }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -31,7 +31,7 @@ const UpperSection = () => {
 
   return (
     <div className="text-white w-full h-[275px]">
-      <div className="relative rounded-t-2xl overflow-hidden">
+      <div className="relative overflow-hidden group">
         {/* Background Image Carousel */}
         <div
           className="h-[275px] bg-cover bg-center relative"
@@ -40,64 +40,60 @@ const UpperSection = () => {
           }}
         ></div>
 
-        <div className="absolute flex justify-between items-center w-full top-3 px-3 z-20">
+        <div className="absolute top-3 3xl:top-5 left-3 3xl:left-5">
           {/* Left Logo */}
           <img
             src="/assest/Logo/ZigPro.svg"
             alt="ZigPro Logo"
-            className="h-[16px] 3xl:h-[25px] opacity-50"
-          />
-
-          {/* Right Flag */}
-          <img
-            src="/assest/Logo/ZigPro.svg"
-            alt="Flag"
-            className="h-[16px] 3xl:h-[25px] opacity-50"
+            className="h-[19px] 3xl:h-[25px] opacity-50"
           />
         </div>
+        <div className="absolute top-3 3xl:top-5 right-3 3xl:right-5">
+          {/* Right Flag (Dynamic) */}
+          <img src={flagImage} alt="Flag" className="h-[19px] 3xl:h-[25px]" />
+        </div>
 
-        {/* Navigation Buttons */}
-        <div className="absolute top-1/2 left-6 transform -translate-y-1/2">
+        {/* Navigation Buttons (Hidden by default, visible on hover) */}
+        <div className="absolute top-1/2 left-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={prevImage}>
             <img src="/assest/Path2.png" alt="previous-button" />
           </button>
         </div>
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2">
+        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <button className="rounded-full text-white" onClick={nextImage}>
             <img src="/assest/Path1.png" alt="next-button" />
           </button>
         </div>
 
         {/* Share And Like */}
-        <div className="absolute bottom-7 right-7">
+        <div className="absolute bottom-2 3xl:bottom-3 right-3 3xl:right-5">
           {isLiked ? (
             <IoMdHeart
-              className="cursor-pointer text-red-500 w-5 h-5 md:w-6 md:h-6"
-              onClick={() => setIsLiked(false)} // Toggle to unliked state
+              className="cursor-pointer text-red-500 md:w-[19px] 3xl:w-[25px]"
+              onClick={() => setIsLiked(false)}
             />
           ) : (
             <FaRegHeart
-              className="cursor-pointer text-white w-5 h-5 md:w-6 md:h-6"
-              onClick={() => setIsLiked(true)} // Toggle to liked state
+              className="cursor-pointer text-white md:w-[19px] 3xl:w-[25px] opacity-40"
+              onClick={() => setIsLiked(true)}
             />
           )}
         </div>
 
-          {/* Slide Indicators */}
-          <div className="absolute bottom-4 flex w-full justify-center ">
-            {images.map((_, index) => (
-              <span
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`cursor-pointer mx-1 h-0.5 w-5 md:w-3 ${
-                  index === currentImageIndex ? "bg-gold" : "bg-gray-400"
-                }`}
-              ></span>
-            ))}
-          </div>
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 flex w-full justify-center">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`cursor-pointer mx-1 h-0.5 w-5 md:w-3 ${
+                index === currentImageIndex ? "bg-gold" : "bg-gray-400"
+              }`}
+            ></span>
+          ))}
         </div>
       </div>
-
+    </div>
   );
 };
 
