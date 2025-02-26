@@ -11,10 +11,10 @@ const flagImages = [
 ];
 
 const logoImages = [
-  "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
-  "/assest/Logo/g12.png",
-  "https://zimopro.com/assets/temp/agents_logos/Savills.svg",
-  // "/assest/Logo/g12.png",
+  "/assest/agents_logos/Barnes_IR.svg",
+  "/assest/agents_logos/Savills.svg",
+  // "/assest/agents_logos/John_Taylor.svg",
+  "/assest/agents_logos/Knight Frank.svg",
 ];
 
 function MainSection() {

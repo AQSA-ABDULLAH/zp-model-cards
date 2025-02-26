@@ -122,24 +122,23 @@ const UpperSection = ({ flagImage }) => {
         )}
 
         {/* Share And Like */}
-<div className="absolute bottom-2 3xl:bottom-3 right-3 3xl:right-5">
-  {isLiked ? (
-    <img
-      src="/assest/Logo/Heart Favourite Red (Model).svg"
-      alt="red-heart"
-      className="cursor-pointer md:w-[19px] 3xl:w-[25px] transition-transform duration-300 transform hover:scale-125"
-      onClick={() => setIsLiked(false)}
-    />
-  ) : (
-    <img
-      src="/assest/Logo/Heart Standard (Model).svg"
-      alt="red-heart"
-      className="cursor-pointer md:w-[19px] 3xl:w-[25px] transition-transform duration-300 transform hover:scale-125"
-      onClick={() => setIsLiked(true)}
-    />
-  )}
-</div>
-
+        <div className="absolute bottom-2 3xl:bottom-3 right-3 3xl:right-5">
+          {isLiked ? (
+            <img
+              src="/assest/Logo/Heart Favourite Red (Model).svg"
+              alt="red-heart"
+              className="cursor-pointer md:w-[19px] 3xl:w-[25px] transition-transform duration-300 transform hover:scale-125"
+              onClick={() => setIsLiked(false)}
+            />
+          ) : (
+            <img
+              src="/assest/Logo/Heart Standard (Model).svg"
+              alt="red-heart"
+              className="cursor-pointer md:w-[19px] 3xl:w-[25px] transition-transform duration-300 transform hover:scale-125"
+              onClick={() => setIsLiked(true)}
+            />
+          )}
+        </div>
 
         {/* Slide Indicators with Loading Effect */}
         <div className="absolute bottom-4 flex w-full justify-center">

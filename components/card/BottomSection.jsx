@@ -45,7 +45,7 @@ export default function BottomSection({ logoImage }) {
         <img
           src={logoImage}
           alt="Savills Logo"
-          className="h-[18px] 3xl:h-[24px]"
+          className="h-[18px] 3xl:h-[24px] dark:invert"
         />
       </footer>
     </section>
